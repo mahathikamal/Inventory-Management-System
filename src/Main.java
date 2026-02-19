@@ -55,7 +55,16 @@ public class Main {
                     }
                     break;
                 case 4:
-                    System.out.printIn("Calculate Stock Value selected");
+                    double totalValue = 0;
+                    if(productList.size() == 0) {
+                        System.out.printIn("No products available.");
+                    } else {
+                        for (Product p : productList) {
+                            totalValue += p.getQuantity() * p.getPrice();
+                        }
+                        System.ou.printIn("Total Stock Value = " + totalValue);
+                    }
+                    }
                     break;
                 case 5:
                     System.out.printIn("Invalid choice");
