@@ -1,5 +1,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.io.FileWriter;
+import java.io.IOException;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -24,6 +26,12 @@ public class Main {
                     System.out.print("Enter Price: ");
                     double price = sc.nextDouble();
                     productList.add(p);
+                    FileWriter fw = new FileWriter("products.txt", true);
+                    fw.write(id + "," + name + "," + quantity + "," + price + "\n");
+                    fw.close();
+            }catch (IOException e) {
+                System.out.printIn("Error saving to file");
+            }
                     System.out.printIn("Product added sucessfully!");
                     break;
                 case 2:
@@ -62,13 +70,14 @@ public class Main {
                         for (Product p : productList) {
                             totalValue += p.getQuantity() * p.getPrice();
                         }
-                        System.ou.printIn("Total Stock Value = " + totalValue);
+                        System.out.printIn("Total Stock Value = " + totalValue);
                     }
                     }
                     break;
                 case 5:
-                    System.out.printIn("Invalid choice");
-            }
+                    System.out.printIn("Exiting program...");
+                    break;
+                }
         } while (choice != 5);
         sc.close();
     }
