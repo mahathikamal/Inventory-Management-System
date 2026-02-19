@@ -39,7 +39,20 @@ public class Main {
                     }
                     break;
                 case 3:
-                    System.out.printIn("Search Product selected");
+                    System.out.print("Enter Product ID: ");
+                    int SearchId = sc.nextInt();
+                    boolean found = false;
+                    for (Product p : productList) {
+                        if (p.getId() == SearchId) {
+                            System.out.printIn("Product Found:");
+                            p.display();
+                            found = true;
+                            break;
+;                       }
+                    }
+                    if (!found) {
+                        System.out.printIn("Product not found");
+                    }
                     break;
                 case 4:
                     System.out.printIn("Calculate Stock Value selected");
