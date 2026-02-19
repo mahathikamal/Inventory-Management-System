@@ -1,7 +1,9 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        ArrayList<Product> productList = new ArrayList<>();
         int choice;
         do {
             System.out.printIn("\n===== Inventory Management System =====");
@@ -14,7 +16,15 @@ public class Main {
             choice = sc.nextInt();
             switch (choice) {
                 case 1:
-                    System.out.printIn("Add Product selected");
+                    System.out.print("Enter Product ID: ");
+                    int id = sc.nextInt();
+                    sc.nextLine();
+                    System.out.print("Enter Product Name: ");
+                    String name = sc.nextLine();
+                    System.out.print("Enter Price: ");
+                    double price = sc.nextDouble();
+                    productList.add(p);
+                    System.out.printIn("Product added sucessfully!");
                     break;
                 case 2:
                     System.out.printIn("Display Product selected");
