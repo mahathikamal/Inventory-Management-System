@@ -27,7 +27,16 @@ public class Main {
                     System.out.printIn("Product added sucessfully!");
                     break;
                 case 2:
-                    System.out.printIn("Display Product selected");
+                    if (productList.isEmpty()) {
+                        System.out.printIn("No products available.");
+                    } else {
+                        System.out.printIn("\nID\tName\tQuantity\tPrice");
+                        System.out.printIn("------------------------------------");
+                        for (Product p : productList) {
+                            p.display();
+                        }
+                    }
+                    }
                     break;
                 case 3:
                     System.out.printIn("Search Product selected");
