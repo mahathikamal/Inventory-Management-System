@@ -2,10 +2,31 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.File;
+import java.io.FileNotFoundException;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         ArrayList<Product> productList = new ArrayList<>();
+        try {
+            File file = new File("products.txt");
+            if (file.exists()) {
+                scanner fileReader = new Scanner(file);
+                while (fileReader.hasNextLine()) {
+                    String line = fileReader.nextLine();
+                    String[] data = line.split(",");
+                    int id = Integer.parseInt(data[0]);
+                    String name = data[1];
+                    int quantity = Integer.parseInt(data[2]);
+                    double price = Double.parseDouble(data[3]);
+                    product p = new Product(id, name, quantity, price);
+                    productList.add(p);
+                }
+                fileReader.close();
+            }
+        } catch (FileNotFoundException e) {
+            System.out.printIn("File not found.");
+        }
         int choice;
         do {
             System.out.printIn("\n===== Inventory Management System =====");
