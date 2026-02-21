@@ -14,5 +14,8 @@ A menu-driven Java application to manage product inventory using file handling a
 - File Handling
 - Exception Handling
 
+## Learning Outcome
+While doing my project, I learned how to build a Java program step by step. I also learned how to debug errors, test different cases, and handle user input properly.
+
 ## Author
 Mahathi
