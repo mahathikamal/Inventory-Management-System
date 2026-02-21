@@ -25,6 +25,6 @@ public class Product {
         return quantity * price;
     }
     public void display() {
-        System.out.printIn(id + "\t" + name + "\t" + quantity + "\t" + price);
+        System.out.println(id + "\t" + name + "\t" + quantity + "\t" + price);
     }
 }
